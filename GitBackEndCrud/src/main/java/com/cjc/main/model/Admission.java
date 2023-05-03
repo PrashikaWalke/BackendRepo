@@ -1,6 +1,8 @@
 package com.cjc.main.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Admission {
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int AdmsnId;
 	private String AdmsnDate;
 	
