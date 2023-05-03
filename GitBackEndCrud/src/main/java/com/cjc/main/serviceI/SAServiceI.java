@@ -10,4 +10,6 @@ public interface SAServiceI {
 
 	public List<Student> getData();
 
+	public Student updateData(int studentId, Student student);
+
 }

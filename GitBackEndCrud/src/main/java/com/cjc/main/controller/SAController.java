@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -30,6 +32,13 @@ public class SAController {
 	{
 		return saServiceI.getData();
 		 
+	}
+	
+	@PutMapping("/student/{StudentId}")
+	public Student updateStudent(@PathVariable int StudentId,@RequestBody Student student)
+	{
+		return saServiceI.updateData(StudentId,student);
+		
 	}
 
 }

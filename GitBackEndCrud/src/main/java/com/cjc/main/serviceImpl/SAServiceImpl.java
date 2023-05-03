@@ -1,6 +1,7 @@
 package com.cjc.main.serviceImpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +26,18 @@ public class SAServiceImpl implements SAServiceI{
 		return saRepo.findAll();
 		
 	}
+
+	@Override
+	public Student updateData(int studentId, Student student) {
+		Optional<Student> findById = saRepo.findById(studentId);
+		if(findById.isPresent()) {
+			student.setStudentId(findById.get().getStudentId());
+			return saRepo.save(student);
+		}else {
+			return new Student();
+		}
+	}
+	
 	
 
 }
