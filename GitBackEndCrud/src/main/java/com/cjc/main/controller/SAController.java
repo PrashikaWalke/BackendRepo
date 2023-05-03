@@ -3,6 +3,7 @@ package com.cjc.main.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -39,6 +40,13 @@ public class SAController {
 	{
 		return saServiceI.updateData(StudentId,student);
 		
+	}
+	
+	@DeleteMapping("/student/{StudentId}")
+	public String deleteStudent(@PathVariable int StudentId)
+	{
+		String dlt = saServiceI.deleteData(StudentId);
+		return dlt;
 	}
 
 }

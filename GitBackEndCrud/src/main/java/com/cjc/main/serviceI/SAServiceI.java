@@ -12,4 +12,6 @@ public interface SAServiceI {
 
 	public Student updateData(int studentId, Student student);
 
+	public String deleteData(int studentId);
+
 }

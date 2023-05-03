@@ -37,6 +37,17 @@ public class SAServiceImpl implements SAServiceI{
 			return new Student();
 		}
 	}
+
+	@Override
+	public String deleteData(int studentId) {
+		Optional<Student> findById = saRepo.findById(studentId);
+		if(findById.isPresent()) {
+			saRepo.deleteById(findById.get().getStudentId());
+			return "Data is Deleted!";
+		}else {
+			return "Data is not Present";
+		}
+	}
 	
 	
 
